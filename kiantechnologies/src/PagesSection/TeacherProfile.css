@@ -1,0 +1,217 @@
+/* TeacherProfile.css */
+.teacher-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  padding: 30px;
+}
+
+.teacher-profile {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Profile Card Styles */
+.profile-card {
+  flex: 1;
+  background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  /* Applying the desired medium size here */
+  width: 180px; /* Medium size width */
+  height: 180px; /* Medium size height */
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #21cccc; /* Border color around the image */
+  box-shadow: 0 0 0 7px rgba(33, 204, 204, 0.2); /* Outer glow/shadow */
+  /* Centering the image within the .profile-image container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teacher-photo { /* The actual image inside the .profile-image container */
+  width: 100%; /* Ensures the image fills its parent (.profile-image) */
+  height: 100%; /* Ensures the image fills its parent (.profile-image) */
+  object-fit: cover; /* Prevents distortion and crops if necessary */
+  display: block; /* Removes extra space below image */
+}
+
+/* Removed the conflicting .image-placeholder CSS */
+
+
+.profile-name {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.specialties {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #3498db;
+  font-weight: 500;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.social-link:hover {
+  background: rgba(52, 152, 219, 0.2);
+  transform: translateX(5px);
+}
+
+.social-link i {
+  font-size: 1.4rem;
+  width: 30px;
+}
+
+.contact-info {
+  margin-top: auto;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.contact-info i {
+  font-size: 1.3rem;
+  color: #3498db;
+  width: 25px;
+}
+
+.contact-info strong {
+  margin-right: 8px;
+}
+
+/* About Section Styles */
+.about-section {
+  flex: 1.5;
+  padding: 50px;
+  background: white;
+  overflow-y: auto;
+  max-height: 90vh; /* Consider if this max-height is desired, might cause scrollbar */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: #3498db;
+  border-radius: 2px;
+}
+
+.about-content {
+  line-height: 1.8;
+  font-size: 1.15rem;
+  color: #34495e;
+}
+
+.about-content p {
+  margin-bottom: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .teacher-profile {
+    flex-direction: column;
+  }
+
+  .profile-card {
+    padding: 30px;
+  }
+
+  .about-section {
+    padding: 30px;
+    max-height: unset; /* Remove max-height when stacked */
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher-profile-container {
+    padding: 15px;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ensure image size adjusts for very small screens */
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .social-links {
+    gap: 10px;
+  }
+
+  .social-link {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  .contact-info p {
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+}

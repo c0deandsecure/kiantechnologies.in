@@ -1,0 +1,89 @@
+/* Highlights.css */
+.highlights-section {
+    background: #003c6c;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .section-title {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .highlights-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .highlight-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .highlight-card:hover {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    transform: translateY(-10px);
+  }
+  
+  .highlight-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+  }
+  
+  .highlight-card:hover .highlight-icon {
+    transform: scale(1.1);
+  }
+  
+  .highlight-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #003c6c;
+  }
+  
+  .highlight-card:hover .highlight-title {
+    color: #ffffff;
+  }
+  
+  .highlight-desc {
+    font-size: 15px;
+    color: #666;
+  }
+  
+  .highlight-card:hover .highlight-desc {
+    color: #ffffff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 28px;
+    }
+  
+    .highlight-card {
+      padding: 25px 15px;
+    }
+  
+    .highlight-title {
+      font-size: 18px;
+    }
+  
+    .highlight-desc {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,36 @@
+/* src/Pages/Pages.css */
+.pages-container {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.page-section {
+  margin: 3rem auto;
+  padding: 2rem;
+  max-width: 1200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-section h2 {
+  color: #0077ff;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.page-section .content {
+  line-height: 1.6;
+  color: #334155;
+}
+
+@media (max-width: 768px) {
+  .pages-container {
+    padding: 2rem 1rem;
+  }
+  
+  .page-section {
+    padding: 1.5rem;
+    margin: 2rem auto;
+  }
+}

@@ -1,0 +1,243 @@
+/* Footer.css - Optimized Medium Size */
+
+.footer {
+  background: #282c34; /* Dark background */
+  padding: 3rem 1.5rem;
+  color: #e0e0e0; /* Light text color */
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box; /* Ensures padding doesn't add to overall width */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem; /* Consistent gap between columns */
+}
+
+.footer-col {
+  flex: 1 1 220px; /* Allows columns to grow/shrink, minimum 220px wide */
+  padding: 0 1rem; /* Internal padding for text within columns */
+}
+
+.footer-logo {
+  width: 160px;
+  margin-bottom: 1rem;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-col h4 {
+  color: #00e0ff; /* Highlight color for headings */
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
+  position: relative;
+}
+
+/* Simple underline for headings */
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50px;
+  height: 2px;
+  background-color: #00e0ff;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-col li a {
+  color: #a0a0a0; /* Default link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.footer-col li a:hover {
+  color: #00e0ff; /* Hover color */
+  transform: translateX(5px);
+}
+
+/* Custom bullet point for list items */
+.footer-col li a::before {
+  content: '\2022'; /* Unicode bullet */
+  color: #00e0ff;
+  font-weight: bold;
+  margin-right: 0.5em;
+  width: 1em; /* Ensures consistent spacing */
+  flex-shrink: 0; /* Prevents shrinking on smaller screens */
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gallery-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 1.5rem; /* Gap for items in the bottom row */
+}
+
+.social-icons i {
+  font-size: 22px;
+  margin-right: 20px;
+  color: #a0a0a0;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons i:hover {
+  color: #00e0ff;
+  transform: translateY(-3px);
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #444;
+  border-radius: 25px;
+  background-color: #3a3f47;
+  color: #e0e0e0;
+  width: 280px;
+  outline: none;
+}
+
+.newsletter input::placeholder {
+  color: #a0a0a0;
+}
+
+.newsletter input:focus {
+  border-color: #00e0ff;
+}
+
+.newsletter button {
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(45deg, #00bcd4, #2196f3);
+  border: none;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.newsletter button:hover {
+  background: linear-gradient(45deg, #2196f3, #00bcd4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .footer-col {
+    flex: 1 1 calc(50% - 2rem); /* Two columns per row, accounting for gap */
+    padding: 0 0.5rem; /* Less padding on smaller screens */
+  }
+  .newsletter input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container, .footer-bottom {
+    flex-direction: column;
+    align-items: center; /* Center align all sections */
+    text-align: center; /* Center text within columns */
+    padding: 0 1rem; /* General padding for the container */
+  }
+
+  .footer-col {
+    flex: 1 1 100%; /* Full width columns */
+    margin-bottom: 2rem; /* Spacing between stacked columns */
+    padding: 0; /* Remove specific column padding */
+  }
+
+  .footer-col:last-of-type {
+    margin-bottom: 0; /* No margin below the last column */
+  }
+
+  /* Center the logo and heading underline on small screens */
+  .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-col h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-col ul {
+    align-items: center; /* Center list items */
+  }
+  .footer-col li a {
+    justify-content: center; /* Center link content */
+    transform: none !important; /* Override hover transform for centering */
+  }
+  .footer-col li a::before {
+    margin-right: 0.2em; /* Adjust bullet spacing */
+  }
+
+  .social-icons {
+    margin-bottom: 1rem;
+    display: flex; /* Ensure icons are flexible */
+    justify-content: center; /* Center the icons */
+    width: 100%; /* Take full width to help centering */
+  }
+
+  .newsletter {
+    flex-direction: column;
+    width: 100%; /* Take full width */
+    align-items: center; /* Center newsletter elements */
+  }
+  .newsletter input,
+  .newsletter button {
+    width: 90%; /* Nearly full width for inputs/buttons */
+    max-width: 300px; /* Max width to prevent excessive stretching */
+  }
+  .newsletter input {
+    margin-bottom: 1rem;
+  }
+}

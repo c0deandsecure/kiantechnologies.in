@@ -1,0 +1,147 @@
+.why-choose-section {
+    background: linear-gradient(135deg, #04567a, #0a3d62);
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .advantages-header .small-heading {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #00c4cc;
+    letter-spacing: 2px;
+  }
+  
+  .advantages-header h2 {
+    font-size: 36px;
+    margin-top: 10px;
+  }
+  
+  .advantages-header span {
+    color: #00c4cc;
+  }
+  
+  .reasons-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+  }
+  
+  .reason-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  .reason-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .reason-card img {
+    width: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .reason-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .reason-card p {
+    font-size: 16px;
+    color: #cfd8dc;
+  }
+  
+  .testimonial-section {
+    margin-top: 100px;
+  }
+  
+  .testimonial-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-section span {
+    color: #00c4cc;
+  }
+  
+  .testimonial-underline {
+    width: 40px;
+    height: 3px;
+    background: #00c4cc;
+    margin: 10px auto 30px;
+  }
+  
+  .testimonial-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-quote {
+    font-size: 18px;
+    font-style: italic;
+  }
+  
+  .testimonial-author {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #00c4cc;
+  }
+  
+  .testimonial-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .testimonial-buttons button {
+    background: #007bff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s;
+  }
+  
+  .testimonial-buttons button:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .advantages-header h2 {
+      font-size: 28px;
+    }
+  
+    .reasons-grid {
+      gap: 20px;
+    }
+  
+    .reason-card {
+      width: 260px;
+    }
+  
+    .testimonial-section h2 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .reason-card {
+      width: 100%;
+    }
+  }
+  

@@ -1,0 +1,355 @@
+/* src/AdminRegister.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Re-use the root variables from AdminLogin.css for consistency */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #8b5cf6;
+    --secondary-dark: #7c3aed;
+    --success: #10b981;
+    --error: #ef4444;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-500: #64748b;
+    --gray-700: #334155;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure global box-sizing is consistent if not already in a global CSS file */
+/* If you have a global index.css or App.css with this, you can omit it here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { /* Only if this is the entry point for body styling, otherwise define globally */
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light);
+    color: var(--gray-700);
+    line-height: 1.6;
+}
+
+/* Admin Register Container - Matches AdminLogin's container */
+.admin-register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+}
+
+/* Register Card - Matches AdminLogin's card */
+.register-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+}
+
+.register-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Register Header - Matches AdminLogin's header */
+.register-header {
+    text-align: center;
+    padding: 2.5rem 2rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: rotate(30deg);
+    transition: var(--transition);
+}
+
+.register-header:hover::before {
+    transform: rotate(30deg) translateX(100%);
+}
+
+.company-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.logo-gradient {
+    background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.company-logo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.register-header h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+/* Message Styling (Success/Error) - Adopted from Login, but adjusted for both success/error */
+.register-message {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    /* Added border-radius for message box */
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    margin-top: -16px; /* Pull it up to cover the card's top margin */
+    position: relative;
+    z-index: 5; /* Ensure it's above other elements if needed */
+}
+
+.register-message.error {
+    background-color: var(--error);
+    color: white;
+}
+
+.register-message .error-icon,
+.register-message .success-icon {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.register-message .error-icon {
+    color: var(--error);
+}
+
+.register-message.success {
+    background-color: var(--success);
+    color: white;
+}
+
+.register-message .success-icon {
+    color: var(--success);
+}
+
+/* Register Form - Matches AdminLogin's form */
+.register-form {
+    padding: 2rem;
+    padding-top: 1.5rem; /* Adjust top padding if message is above */
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-icon-container {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+    z-index: 2;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    padding-left: 3.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--gray-100);
+    position: relative;
+    z-index: 1;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.input-group input::placeholder {
+    color: var(--gray-500);
+    opacity: 0.6;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.password-toggle:hover {
+    color: var(--primary);
+}
+
+/* Register Button - Matches AdminLogin's button */
+.register-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.register-button:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
+}
+
+.register-button:disabled {
+    background: var(--gray-300);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Spinner - Matches AdminLogin's spinner */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Footer Link - Matches AdminLogin's "New admin? Register here" section */
+.register-footer-link {
+    padding: 0 2rem; /* Matches form padding */
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--gray-700);
+}
+
+.login-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.login-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Card Footer (version info) - Matches AdminLogin's footer */
+.register-card-footer {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem; /* Add margin to separate from the form/link */
+}
+
+.register-card-footer p {
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+/* Responsive adjustments - Matches AdminLogin's responsive rules */
+@media (max-width: 480px) {
+    .register-header {
+        padding: 1.75rem 1.5rem 1.25rem;
+    }
+
+    .register-form {
+        padding: 1.5rem;
+    }
+
+    .company-logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .register-footer-link {
+        padding: 0 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .register-card-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 1.25rem;
+    }
+}

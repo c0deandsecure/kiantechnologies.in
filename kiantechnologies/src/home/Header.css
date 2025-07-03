@@ -1,0 +1,319 @@
+/* src/home/Header.css */
+:root {
+  --primary-color: #00e0ff;
+  --secondary-color: #0077ff;
+  --dark-color: #111827;
+  --light-color: #f8fafc;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll from content overflow */
+}
+
+.App {
+  position: relative;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* Added gap for spacing between logo and nav-links on larger screens */
+  gap: 2rem; 
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* Ensure logo doesn't shrink too much */
+  flex-shrink: 0;
+}
+
+.logo span {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  /* Allow links to wrap to the next line if space is limited */
+  flex-wrap: wrap; 
+  /* Push links to the right */
+  margin-left: auto; 
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  position: relative;
+  white-space: nowrap; /* Prevent links from breaking onto multiple lines */
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-links li:hover a::after {
+  width: 100%;
+}
+
+/* REMOVED ALL .mobile-menu-btn STYLES */
+
+/* Slide Styles */
+.each-slide {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-content h3 {
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+
+.hero-content p .highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.cta-button {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background: var(--primary-color);
+  color: var(--dark-color);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+}
+
+/* Indicators */
+.react-slideshow-container .default-nav {
+  background: rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.react-slideshow-container .default-nav:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.react-slideshow-container .default-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  /* Adjust nav-links for smaller desktops/tablets */
+  .nav-links {
+    gap: 1.5rem; /* Reduce gap */
+    font-size: 0.9rem; /* Slightly smaller font */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem; /* Smaller padding */
+    flex-direction: column; /* Stack logo and nav links vertically */
+    align-items: flex-start; /* Align items to the start */
+    gap: 1rem; /* Space between logo and stacked links */
+  }
+  
+  .logo {
+    width: 100%; /* Make logo take full width */
+    justify-content: center; /* Center logo horizontally */
+    font-size: 1.6rem;
+  }
+  
+  .logo span {
+    font-size: 1rem;
+    margin-left: 5px; /* Adjust margin */
+  }
+
+  .nav-links {
+    /* These styles make the nav-links always visible and wrap */
+    display: flex; /* Keep it flex */
+    flex-direction: row; /* Keep them in a row for wrapping */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center links when wrapped */
+    width: 100%; /* Take full width below logo */
+    padding: 0.5rem 0; /* Some padding */
+    gap: 0.8rem; /* Smaller gap for wrapped items */
+    margin-left: 0; /* Reset margin-left auto */
+  }
+  
+  .nav-links li {
+    margin: 0; /* Remove previous margins if any */
+  }
+
+  .nav-links li a {
+    font-size: 0.85rem; /* Smaller font for small screens */
+    padding: 0.3rem 0.5rem; /* Add padding for better touch targets */
+    white-space: nowrap; /* Prevent link text from breaking */
+  }
+
+  .overlay {
+    padding: 0 5%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+  .logo span {
+    display: none; /* Hide full name on very small screens if too long */
+  }
+  
+  .nav-links {
+    gap: 0.5rem; /* Even smaller gap */
+    padding: 0.3rem 0;
+  }
+  .nav-links li a {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h3 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+}

@@ -1,0 +1,221 @@
+/* Internship.css */
+:root {
+  --primary: #21cccc;
+  --primary-dark: #19a8a8;
+  --secondary: #3ba0e3;
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --light-bg: #f7f7f7;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.internship-section {
+  padding: 80px 20px;
+  background-color: var(--light-bg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  margin-bottom: 50px;
+  text-align: left;
+  width: 100%;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  color: var(--text-dark);
+  font-weight: 700;
+  text-align: left;
+  margin: 0;
+}
+
+.section-header h2 span {
+  color: var(--primary);
+}
+
+.internship-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 0;
+}
+
+.internship-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.card-header {
+  padding: 20px;
+  background-color: var(--primary);
+  text-align: left;
+}
+
+.card-header h3 {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+.card-image-container {
+  position: relative;
+  padding: 20px;
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.apply-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #1b1a1a, #ff7f7f);
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.apply-button a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-description {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-description p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .internship-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .internship-section {
+    padding: 60px 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .internship-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .section-header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .internship-section {
+    padding: 50px 15px;
+  }
+  
+  .section-header h2 {
+    font-size: 28px;
+  }
+  
+  .section-subtitle {
+    font-size: 14px;
+  }
+  
+  .card-header h3 {
+    font-size: 18px;
+  }
+  
+  .card-description p {
+    font-size: 14px;
+  }
+}
+/* Add this to your existing Internship.css */
+.view-all-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.view-all-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 35px;
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(33, 204, 204, 0.3);
+  transition: all 0.3s ease;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.view-all-button i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.view-all-button:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments for the button */
+@media (max-width: 768px) {
+  .view-all-button {
+    padding: 12px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .view-all-button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}

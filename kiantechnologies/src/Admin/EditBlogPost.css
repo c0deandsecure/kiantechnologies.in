@@ -1,0 +1,446 @@
+/* General Styling & Page Layout */
+.edit-blog-page {
+    background-color: #f8fafc; /* Light gray background */
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif; /* Modern sans-serif font */
+    color: #334155; /* Darker text for readability */
+}
+
+/* Header Section */
+.form-header {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.form-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c; /* Even darker for headings */
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+/* Form Wrapper & Background */
+.form-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 0.75rem; /* Rounded corners */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    padding: 2.5rem;
+}
+
+/* Form Messages (Error/Success) */
+.form-message {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-message .message-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.form-error {
+    background-color: #fee2e2; /* Red-100 */
+    color: #dc2626; /* Red-600 */
+    border: 1px solid #ef4444; /* Red-500 */
+}
+
+.form-error .message-icon {
+    background-color: #ef4444; /* Red-500 */
+    color: #ffffff;
+}
+
+.form-success {
+    background-color: #d1fae5; /* Green-100 */
+    color: #10b981; /* Green-600 */
+    border: 1px solid #10b981; /* Green-500 */
+}
+
+.form-success .message-icon {
+    background-color: #10b981; /* Green-500 */
+    color: #ffffff;
+}
+
+/* Specific messages for loading/error state if no form is shown */
+.edit-blog-loading-message,
+.edit-blog-error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Ample height for message */
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #475569; /* Slate-700 */
+    text-align: center;
+    padding: 2rem;
+}
+
+.edit-blog-error-message {
+    color: #dc2626; /* Red-600 */
+    background-color: #fef2f2; /* Red-50 */
+    border: 1px solid #fca5a5; /* Red-300 */
+    border-radius: 0.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+
+/* Blog Form Layout (CSS Grid) */
+.blog-form {
+    display: grid;
+    gap: 2rem; /* Gap between form sections */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) { /* Medium screens and up */
+    .form-grid {
+        grid-template-columns: 3fr 1.5fr; /* Main content wider than sidebar */
+        gap: 3rem;
+    }
+}
+
+/* Form Sections */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Gap between form groups within a section */
+}
+
+/* Individual Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569; /* Slate-700 */
+    margin-bottom: 0.6rem;
+    display: block; /* Ensures label takes full width */
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid #cbd5e1; /* Slate-300 */
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: #334155;
+    background-color: #f8fafc; /* Light background for inputs */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #6366f1; /* Indigo-500 */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); /* Focus ring */
+    outline: none;
+    background-color: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px; /* Minimum height for textarea */
+}
+
+/* Image Upload Specifics */
+.image-upload-group {
+    text-align: center;
+}
+
+.image-preview-container {
+    background-color: #e2e8f0; /* Light blue-gray background */
+    border: 2px dashed #94a3b8; /* Dashed border */
+    border-radius: 0.75rem;
+    height: 200px; /* Fixed height for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.image-preview-container:hover {
+    background-color: #cbd5e1; /* Slightly darker on hover */
+    border-color: #64748b;
+}
+
+.image-preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Cover the container, cropping if necessary */
+    border-radius: 0.5rem; /* Match parent's border radius for aesthetic */
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #64748b; /* Slate-500 */
+    font-size: 0.9rem;
+    padding: 1rem;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #6366f1; /* Indigo-500 */
+}
+
+.upload-hint {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #94a3b8; /* Slate-400 */
+}
+
+.hidden-file-input {
+    display: none; /* Hide the default file input */
+}
+
+/* Publish Settings (Toggle Switch) */
+.publish-settings-group {
+    background-color: #f0f4f8; /* Very light blue-gray background */
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    margin-top: 0.8rem;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 3.2rem; /* Wider switch */
+    height: 1.8rem; /* Taller switch */
+    background-color: #cbd5e1; /* Off state background */
+    border-radius: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 0.8rem;
+}
+
+.toggle-label::after {
+    content: '';
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #6366f1; /* Indigo-500 on state */
+}
+
+.toggle-checkbox:checked + .toggle-label::after {
+    transform: translateX(1.4rem); /* Move handle to the right */
+}
+
+.toggle-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+/* Live Preview Box */
+.preview-box-group {
+    margin-top: 1.5rem; /* Space below publish settings */
+}
+
+.preview-box {
+    background-color: #fefce8; /* Light yellow background */
+    border: 1px solid #fde047; /* Yellow-400 border */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    color: #ca8a04; /* Yellow-700 */
+    margin-bottom: 1rem;
+}
+
+.preview-icon {
+    font-size: 1.5rem;
+    margin-right: 0.6rem;
+}
+
+.preview-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.preview-content {
+    font-size: 0.9rem;
+    color: #78716c; /* Stone-600 */
+}
+
+.preview-title {
+    font-weight: 700;
+    color: #44403c; /* Stone-800 */
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.preview-date {
+    font-size: 0.8rem;
+    color: #a8a29e; /* Stone-400 */
+    margin-bottom: 0.8rem;
+}
+
+.preview-excerpt {
+    line-height: 1.6;
+}
+
+/* Form Actions (Buttons) */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end; /* Align buttons to the right */
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0; /* Separator line */
+    margin-top: 2rem;
+}
+
+.action-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-button .icon {
+    margin-right: 0.6rem;
+}
+
+.submit-button {
+    background-color: #6366f1; /* Indigo-500 */
+    color: #ffffff;
+}
+
+.submit-button:hover {
+    background-color: #4f46e5; /* Indigo-600 */
+    box-shadow: 0 4px 6px rgba(99, 102, 241, 0.2);
+}
+
+.submit-button:disabled {
+    background-color: #a5b4fc; /* Indigo-300 */
+    cursor: not-allowed;
+    opacity: 0.7; /* Slightly reduce opacity when disabled */
+}
+
+.spinner-icon {
+    animation: spin 1s linear infinite;
+}
+
+.cancel-button {
+    background-color: #e2e8f0; /* Slate-200 */
+    color: #475569; /* Slate-700 */
+}
+
+.cancel-button:hover {
+    background-color: #cbd5e1; /* Slate-300 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Keyframe for spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 767px) {
+    .edit-blog-page {
+        padding: 1rem;
+    }
+
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .form-header h1 {
+        font-size: 2rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* Ensures single column layout */
+    }
+
+    .form-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: stretch; /* Stretch buttons to full width */
+    }
+
+    .action-button {
+        width: 100%; /* Full width buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-header h1 {
+        font-size: 1.8rem;
+    }
+    .form-message {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.8rem 1rem;
+    }
+    .form-message .message-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
